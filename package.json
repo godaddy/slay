@@ -1,7 +1,7 @@
 {
   "name": "slay",
-  "description": "Rock-solid structured application layout for building APIs and web apps in Node.js",
   "version": "1.0.0",
+  "description": "Rock-solid structured application layout for building APIs and web apps in Node.js",
   "main": "lib/index.js",
   "dependencies": {
     "async": "^1.5.0",
