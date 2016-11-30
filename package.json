@@ -1,0 +1,37 @@
+{
+  "name": "slay",
+  "description": "Rock-solid structured application layout for building APIs and web apps in Node.js",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "dependencies": {
+    "async": "^1.5.0",
+    "broadway": "^3.1.0",
+    "diagnostics": "^1.0.1",
+    "express": "^4.13.3",
+    "lodash.merge": "^4.6.0",
+    "nconf": "^0.8.2",
+    "understudy": "^4.1.0",
+    "winston": "^2.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "godaddy-test-tools": "^3.1.0",
+    "gulp": "^3.9.0",
+    "request": "^2.79.0",
+    "sinon": "^1.17.2"
+  },
+  "scripts": {
+    "test": "gulp",
+    "full": "gulp full"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/godaddy/slay.git"
+  },
+  "author": "GoDaddy.com Operating Company, LLC",
+  "contributors": [
+    "Charlie Robbins <crobbins@godaddy.com>",
+    "Fady Matar <fmatar@godaddy.com>"
+  ],
+  "license": "MIT"
+}
