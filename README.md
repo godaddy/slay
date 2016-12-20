@@ -1,4 +1,6 @@
 ![](assets/header.png)
+[![Build
+Status](https://travis-ci.org/godaddy/slay.svg?branch=master)](https://travis-ci.org/godaddy/slay)
 
 Rock-solid structured application layout for building APIs and web apps in Node.js.
 
