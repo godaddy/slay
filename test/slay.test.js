@@ -36,7 +36,7 @@ describe('Slay test suite (unit tests)', function () {
       var baseUri = 'http://localhost:8080';
 
       var previous = process.env.NODE_ENV;
-      process.env.NODE_ENV = 'unique-key';
+      process.env.NODE_ENV = 'unique-key ';
 
       /* Boot the app in a before hook */
       before(function (done) {
@@ -70,7 +70,7 @@ describe('Slay test suite (unit tests)', function () {
         });
       });
 
-      it('should set app.env', function (done) {
+      it('should set app.env, trimming any whitespace', function (done) {
         assert.equal(app.env, 'unique-key');
         process.env.NODE_ENV = previous;
         done();
