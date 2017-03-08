@@ -1,6 +1,6 @@
 {
   "name": "slay",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Rock-solid structured application layout for building APIs and web apps in Node.js",
   "main": "lib/index.js",
   "dependencies": {
