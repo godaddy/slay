@@ -135,6 +135,8 @@ The `App` exposed by `slay` has all of the functionality exposed by an `app` cre
 | `start`   | Main application startup                | `slay`     |
 | `routers` | Definition of `app.routes`              | `slay`     |
 | `actions` | Critical path application functionality | User       |
+| `close`   | Notification to stop accepting requests | `slay`     |
+| `free`    | Notification to free any held resources | `slay`     |
 
 ### Stacks
 
@@ -199,6 +201,17 @@ All `Stack` instances created by invoking `app.stack` will be exposed on the `ap
 7. The `callback` from `app.start([options], callback);` is invoked. The `app` is now started and ready for use.
 
 ![](assets/flows.png)
+
+### App shutdown in-detail
+
+1. App is told to begin gracefully shutdown and `app.dispose(callback);` is invoked.
+2. `app.perform('close')` performs `before` _"setup"_ interceptors (see: [understudy interceptors]). This executes the built-in `slay` actions of which:
+  - **Calls* `app.close`
+  - Users should stop accepting new requests from any servers they control outside of `slay`.
+3. Any `after` _"setup"_ interceptors are invoked. (see: [understudy interceptors]). _`slay` runs nothing by default here._
+4. `app.perform('free')` performs `before` _"setup"_ interceptors (see: [understudy interceptors]). _`slay` runs nothing by default here._. 
+  - Users should free any resources they hold at this point. This includes examples of timers, database connections, and child processes.
+5. Any `after` _"setup"_ interceptors are invoked. (see: [understudy interceptors]). _`slay` runs nothing by default here._
 
 ## Tests
 
