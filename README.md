@@ -122,7 +122,7 @@ The `App` exposed by `slay` has all of the functionality exposed by an `app` cre
 | `app.preboot`   | Schedule a preboot                      | `broadway`        |
 | `app.mixin`     | Add functionality into the app          | `broadway`        |
 | `app.start`     | Start the application                   | `broadway`        |
-| `app.close`     | Shutdown the application                | `broadway`        |
+| `app.close`     | Gracefully shutdown the application     | `slay.App`        |
 | `app.perform`   | Execute a named interceptor             | `understudy`      |
 | `app.before`    | Execute _before_ a named interceptor    | `understudy`      |
 | `app.after`     | Execute _after_ a named interceptor     | `understudy`      |
