@@ -4,6 +4,17 @@
 // Example Slay application
 const app = require('../lib/');
 
+process.on('SIGTERM', function () {
+  app.dispose(function (e) {
+    if (e) {
+      console.error(e);
+      process.exit(1);
+    } else {
+      process.exit(0)
+    }
+  });
+});
+
 app.start({
   http: 0
 }, function listen(error, app) {
