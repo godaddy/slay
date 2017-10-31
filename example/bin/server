@@ -4,21 +4,31 @@
 // Example Slay application
 const app = require('../lib/');
 
-process.on('SIGTERM', function () {
-  app.dispose(function (e) {
-    if (e) {
-      console.error(e);
-      process.exit(1);
-    } else {
-      process.exit(0)
-    }
-  });
-});
-
 app.start({
+  config: {
+    close: {
+      freeAfter: 1,
+      killAfter: 30
+    }
+  },
   http: 0
 }, function listen(error, app) {
-  if (error) return app.log.error(error.message);
+  if (error) {
+    app.log.error(error.message);
+    process.exit(1);
+  }
+
+  process.on('SIGTERM', function () {
+    app.close(function (e) {
+      if (e) {
+        console.error(e);
+        process.exit(1);
+      } else {
+        process.exit(0)
+      }
+    });
+  });
+
   const address = app.servers.http.address();
   app.log.info('App started on %d', address.port);
   app.log.info(`Open http://127.0.0.1:${address.port}/ in a browser.`);

@@ -8,6 +8,7 @@ module.exports = function middlwares(app, options, callback) {
       app.log.info('%s - request - %s', req.method, req.url, {
         rid: ++rid
       });
+      next();
     });
 
     app.after('actions', function postRouting(cb) {
