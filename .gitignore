@@ -30,3 +30,7 @@ node_modules
 .DS_Store
 
 build
+
+# Locks
+yarn.lock
+package-lock.json
