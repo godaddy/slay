@@ -104,7 +104,7 @@ describe('Slay test suite (unit tests)', function () {
           assert.ifError(error);
           assert.equal(app.__afterActions, true);
 
-          done();
+          app.close(done);
         });
       });
 
@@ -114,7 +114,7 @@ describe('Slay test suite (unit tests)', function () {
             prebootApp.__callbackPreboots = true;
 
             app.config
-              .use('literal', { http: 8090 })
+              .use('literal', { http: 8080 })
               .load(callback);
           },
           middlewares: function (prebootApp, options, callback) {
@@ -141,7 +141,7 @@ describe('Slay test suite (unit tests)', function () {
           assert.equal(app.__callbackMiddlewares, true);
           assert.equal(app.__callbackRoutes, true);
 
-          done();
+          app.close(done);
         });
       });
     });
