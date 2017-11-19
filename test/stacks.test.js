@@ -107,7 +107,7 @@ describe('Stack tests', function () {
         assert.equal(stack, stack.unshift(hook, 'unshift hook'));
         assert.equal(2, stack[property].dispatch.length);
         assert.equal(unshift[hook], stack[property].dispatch[0]);
-      })
+      });
     });
   });
 
@@ -189,5 +189,5 @@ function testStackHook(hook) {
       assert.equal(1, stack[property].dispatch.length);
       assert.equal(handler, stack[property].dispatch[0]);
     });
-  }
+  };
 }

@@ -92,6 +92,60 @@ describe('Slay test suite (unit tests)', function () {
       });
     });
 
+    describe('Preboot sources', function () {
+      it('should accept preboot paths', function (done) {
+        var app = new slay.App(path.join(__dirname, 'fixtures'), {
+          preboots: path.join(__dirname, 'fixtures/lib/preboots'),
+          middlewares: path.join(__dirname, 'fixtures/lib/middlewares'),
+          routes: path.join(__dirname, 'fixtures/lib/routes')
+        });
+
+        app.start(function (error) {
+          assert.ifError(error);
+          assert.equal(app.__afterActions, true);
+
+          done();
+        });
+      });
+
+      it('should accept preboot callbacks', function (done) {
+        var app = new slay.App('testing', {
+          preboots: function (prebootApp, options, callback) {
+            prebootApp.__callbackPreboots = true;
+
+            app.config
+              .use('literal', { http: 8090 })
+              .load(callback);
+          },
+          middlewares: function (prebootApp, options, callback) {
+            prebootApp.after('actions', function (prebootDone) {
+              prebootApp.__callbackMiddlewares = true;
+
+              prebootDone();
+            });
+
+            callback();
+          },
+          routes: function (prebootApp, options, callback) {
+            prebootApp.perform('actions', function (prebootDone) {
+              prebootApp.__callbackRoutes = true;
+
+              prebootDone();
+            }, callback);
+          }
+        });
+
+        app.start(function (error) {
+          assert.ifError(error);
+          assert.equal(app.__callbackPreboots, true);
+          assert.equal(app.__callbackMiddlewares, true);
+          assert.equal(app.__callbackRoutes, true);
+
+          done();
+        });
+      });
+    });
+
     describe('App.bootstrap', function () {
 
       it('should not affect other instances when changed', function () {
