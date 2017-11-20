@@ -65,6 +65,9 @@ describe('Slay test suite (unit tests)', function () {
         start(function (err, instance) {
           assert.ifError(err);
           assert(instance);
+          assert.typeOf(app.paths.preboots, 'string');
+          assert.typeOf(app.paths.middlewares, 'string');
+          assert.typeOf(app.paths.routes, 'string');
           assert.equal(instance.__afterActions, true);
           done();
         });
@@ -102,6 +105,9 @@ describe('Slay test suite (unit tests)', function () {
 
         app.start(function (error) {
           assert.ifError(error);
+          assert.typeOf(app.paths.preboots, 'string');
+          assert.typeOf(app.paths.middlewares, 'string');
+          assert.typeOf(app.paths.routes, 'string');
           assert.equal(app.__afterActions, true);
 
           app.close(done);
@@ -137,6 +143,9 @@ describe('Slay test suite (unit tests)', function () {
 
         app.start(function (error) {
           assert.ifError(error);
+          assert.isUndefined(app.paths.preboots);
+          assert.isUndefined(app.paths.middlewares);
+          assert.isUndefined(app.paths.routes);
           assert.equal(app.__callbackPreboots, true);
           assert.equal(app.__callbackMiddlewares, true);
           assert.equal(app.__callbackRoutes, true);
