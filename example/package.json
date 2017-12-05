@@ -1,10 +1,14 @@
 {
   "name": "slay-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "An example Slay application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/server",
+    "test": "echo \"Example app does not provide tests. Use `npm start`\" && exit 1"
+  },
+  "bin": {
+    "server": "bin/server"
   },
   "author": "",
   "license": "ISC",

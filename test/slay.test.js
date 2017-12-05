@@ -1,5 +1,5 @@
+/* eslint-disable no-process-env */
 'use strict';
-
 var assert  = require('chai').assert,
     util    = require('util'),
     path    = require('path'),
@@ -34,7 +34,6 @@ describe('Slay test suite (unit tests)', function () {
     describe('Running application tests', function () {
       var App, app;
       var baseUri = 'http://localhost:8080';
-
       var previous = process.env.NODE_ENV;
       process.env.NODE_ENV = 'unique-key ';
 
