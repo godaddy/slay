@@ -1,4 +1,4 @@
-'use strict';
+
 
 var routes = {
   sample: require('./sample')

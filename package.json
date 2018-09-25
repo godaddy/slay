@@ -11,16 +11,21 @@
     "lodash.merge": "^4.6.0",
     "nconf": "^0.8.2",
     "understudy": "^4.1.0",
-    "winston": "^2.1.1"
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "godaddy-test-tools": "^3.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-godaddy": "^2.1.0",
+    "eslint-plugin-json": "^1.2.1",
+    "eslint-plugin-mocha": "^4.12.1",
+    "godaddy-test-tools": "^11.0.0",
     "gulp": "^3.9.0",
     "request": "^2.79.0",
     "sinon": "^1.17.2"
   },
   "scripts": {
+    "lint": "eslint --fix ./lib ./test",
     "test": "gulp",
     "full": "gulp full"
   },

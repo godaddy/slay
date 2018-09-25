@@ -24,8 +24,9 @@ build/Release
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules
 
-#IntelliJ project files
+# Project files
 *.iml
+.idea
 
 .DS_Store
 

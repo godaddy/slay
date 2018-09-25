@@ -1,10 +1,10 @@
-'use strict';
+/* eslint-disable no-process-env */
 
-var assert  = require('chai').assert,
-    util    = require('util'),
-    path    = require('path'),
-    request = require('request'),
-    slay    = require('../');
+const assert = require('chai').assert,
+  util = require('util'),
+  path = require('path'),
+  request = require('request'),
+  slay = require('../');
 
 describe('Slay test suite (unit tests)', function () {
 
@@ -32,10 +32,10 @@ describe('Slay test suite (unit tests)', function () {
     });
 
     describe('Running application tests', function () {
-      var App, app;
-      var baseUri = 'http://localhost:8080';
+      let App, app;
+      const baseUri = 'http://localhost:8080';
 
-      var previous = process.env.NODE_ENV;
+      const previous = process.env.NODE_ENV;
       process.env.NODE_ENV = 'unique-key ';
 
       /* Boot the app in a before hook */
@@ -50,7 +50,6 @@ describe('Slay test suite (unit tests)', function () {
         function start(options, callback) {
           if (!callback && typeof options === 'function') {
             callback = options;
-            options = {};
           }
 
           app = new App(path.join(__dirname, 'fixtures'));
@@ -97,7 +96,7 @@ describe('Slay test suite (unit tests)', function () {
 
     describe('Preboot sources', function () {
       it('should accept preboot paths', function (done) {
-        var app = new slay.App(path.join(__dirname, 'fixtures'), {
+        const app = new slay.App(path.join(__dirname, 'fixtures'), {
           preboots: path.join(__dirname, 'fixtures/lib/preboots'),
           middlewares: path.join(__dirname, 'fixtures/lib/middlewares'),
           routes: path.join(__dirname, 'fixtures/lib/routes')
@@ -115,7 +114,7 @@ describe('Slay test suite (unit tests)', function () {
       });
 
       it('should accept preboot callbacks', function (done) {
-        var app = new slay.App('testing', {
+        const app = new slay.App('testing', {
           preboots: function (prebootApp, options, callback) {
             prebootApp.__callbackPreboots = true;
 
@@ -158,22 +157,22 @@ describe('Slay test suite (unit tests)', function () {
     describe('App.bootstrap', function () {
 
       it('should not affect other instances when changed', function () {
-        var app = new slay.App('testing');
+        const app = new slay.App('testing');
         assert.ok(app);
 
         //
         // Now we override it and assert the older
         // `app` instance is unchanged.
         //
-        var orig = slay.App.bootstrap;
+        const orig = slay.App.bootstrap;
         assert.ok(orig);
-        var changed = false;
+        let changed = false;
         slay.App.bootstrap = function modified() {
           assert.equal(slay.App.bootstrap, modified);
           changed = true;
         };
 
-        var copy = new slay.App('testing');
+        const copy = new slay.App('testing');
         assert.ok(copy);
         assert.notEqual(slay.App.bootstrap, orig);
         assert.ok(changed);
