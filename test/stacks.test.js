@@ -1,4 +1,4 @@
-'use strict';
+
 
 var Stack = require('../').Stack;
 var sinon = require('sinon');

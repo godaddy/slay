@@ -1,4 +1,4 @@
-'use strict';
+
 
 var winston = require('winston');
 
@@ -18,7 +18,7 @@ module.exports = function (app, options, callback) {
     .use('literal', { http: 8080 })
     .load(callback);
 
-  app.log.add(winston.transports.Console);
+  app.log.add(new winston.transports.Console());
 
   var stack = app.stack('default');
 

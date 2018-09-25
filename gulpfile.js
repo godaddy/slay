@@ -1,7 +1,6 @@
 /* eslint no-process-env: 0 */
-'use strict';
 
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
