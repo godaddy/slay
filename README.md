@@ -209,7 +209,7 @@ npm test
 ## License
 MIT
 
-##### Contributors: [Fady Matar](https://github.secureserver.net/fmatar), [Charlie Robbins](https://github.secureserver.net/crobbins)
+##### Contributors: [Fady Matar](https://github.com/fmatar), [Charlie Robbins](https://github.com/indexzero)
 
 [broadway]: https://github.com/indexzero/broadway
 [understudy]: https://github.com/bmeck/understudy#understudy
