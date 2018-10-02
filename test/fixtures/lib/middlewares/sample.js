@@ -1,4 +1,4 @@
-
+'use strict';
 
 /*
  * Defines a sample middleware for your application

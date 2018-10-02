@@ -2,6 +2,7 @@
   "root": true,
   "extends": "godaddy",
   "rules": {
-    "new-cap": "off"
+    "new-cap": "off",
+    "strict": "off"
   }
 }

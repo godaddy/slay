@@ -1,10 +1,11 @@
 /* eslint-disable no-process-env */
+'use strict';
 
-const assert = require('chai').assert,
-  util = require('util'),
-  path = require('path'),
-  request = require('request'),
-  slay = require('../');
+const assert = require('chai').assert;
+const util = require('util');
+const path = require('path');
+const request = require('request');
+const slay = require('../');
 
 describe('Slay test suite (unit tests)', function () {
 

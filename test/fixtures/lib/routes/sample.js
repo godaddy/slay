@@ -1,4 +1,4 @@
-
+'use strict';
 
 /*
  * Defines a sample route for your application

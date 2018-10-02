@@ -1,4 +1,5 @@
 /* eslint no-process-env: 0 */
+'use strict';
 
 const gulp = require('gulp');
 
