@@ -5,10 +5,10 @@
   "main": "lib/index.js",
   "dependencies": {
     "async": "^1.5.0",
-    "broadway": "^3.1.0",
+    "broadway": "^4.1.0",
     "diagnostics": "^1.0.1",
     "express": "^4.13.3",
-    "lodash.merge": "^4.6.0",
+    "lodash.merge": "^4.6.2",
     "nconf": "^0.8.2",
     "understudy": "^4.1.0",
     "winston": "^3.1.0"
@@ -19,8 +19,8 @@
     "eslint-config-godaddy": "^2.1.0",
     "eslint-plugin-json": "^1.2.1",
     "eslint-plugin-mocha": "^4.12.1",
-    "godaddy-test-tools": "^11.0.0",
-    "gulp": "^3.9.0",
+    "godaddy-test-tools": "^13.0.0",
+    "gulp": "^4.0.2",
     "request": "^2.79.0",
     "sinon": "^1.17.2"
   },
