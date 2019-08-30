@@ -6,6 +6,7 @@ const util = require('util');
 const path = require('path');
 const request = require('request');
 const slay = require('../');
+const winston = require('winston');
 
 describe('Slay test suite (unit tests)', function () {
 
@@ -92,6 +93,19 @@ describe('Slay test suite (unit tests)', function () {
       /* Shutdown the app */
       after(function (done) {
         app.close(done);
+      });
+    });
+
+    describe('Preboot logger', function () {
+      it('should expose logProvider as winston', function (done) {
+        const app = new slay.App(path.join(__dirname, 'fixtures'), {
+        });
+        app.start(function (error) {
+          assert.ifError(error);
+          assert.strictEqual(app.logProvider, winston);
+
+          app.close(done);
+        });
       });
     });
 
