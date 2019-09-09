@@ -1,6 +1,3 @@
-example/
-
-
 # Logs
 logs
 *.log
@@ -27,9 +24,29 @@ build/Release
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules
 
-#IntelliJ project files
+# Project files
 *.iml
+.idea
 
+# Mac specific files
 .DS_Store
 
+# Additional build files
 build
+
+# Arbitrary tarballs
+*.tar.gz
+*.tgz
+
+# Locks
+yarn.lock
+package-lock.json
+
+### ▲ .gitignore contents above
+### ▼ additional ignore files for publishing
+
+# Shared examples of usage
+example/
+
+# Assets for images / architecture
+assets/
