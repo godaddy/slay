@@ -28,9 +28,15 @@ node_modules
 *.iml
 .idea
 
+# Mac specific files
 .DS_Store
 
+# Additional build files
 build
+
+# Arbitrary tarballs
+*.tar.gz
+*.tgz
 
 # Locks
 yarn.lock
