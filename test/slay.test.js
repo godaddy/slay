@@ -102,7 +102,9 @@ describe('Slay test suite (unit tests)', function () {
         });
         app.start(function (error) {
           assert.ifError(error);
-          assert.strictEqual(app.logProvider, winston);
+          assert.strictEqual(app.logProvider.transports, winston.transports);
+          assert.strictEqual(app.logProvider.formats, winston.formats);
+          assert.strictEqual(app.logProvider.Container, winston.Container);
 
           app.close(done);
         });
