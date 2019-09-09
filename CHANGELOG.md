@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.1
+
+* [#11] Clean up ignore files.
+
 ## 3.1.0
 
 * [#10] Expose log provider to app as `app.logProvider`.
