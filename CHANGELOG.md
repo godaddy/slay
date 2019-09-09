@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0
+
+* [#10] Expose log provider to app as `app.logProvider`.
+
 ## 3.0.0
 
 * This upgrades `create-servers` and also deprecates support for versions of
