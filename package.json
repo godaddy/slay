@@ -11,7 +11,8 @@
     "lodash.merge": "^4.6.2",
     "nconf": "^0.8.2",
     "understudy": "^4.1.0",
-    "winston": "^3.1.0"
+    "winston": "^3.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "^3.4.1",
@@ -27,7 +28,9 @@
   "scripts": {
     "lint": "eslint --fix ./lib ./test",
     "test": "gulp",
-    "full": "gulp full"
+    "full": "gulp full",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -38,5 +41,6 @@
     "Charlie Robbins <crobbins@godaddy.com>",
     "Fady Matar <fmatar@godaddy.com>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
