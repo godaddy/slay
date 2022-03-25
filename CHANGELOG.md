@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.0
+
+* (breaking) Bumps `nconf` dependency which could break compatibility with versions of node older than 10.
+
 ## 3.1.1
 
 * [#11] Clean up ignore files.
