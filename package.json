@@ -4,7 +4,7 @@
   "description": "Rock-solid structured application layout for building APIs and web apps in Node.js",
   "main": "lib/index.js",
   "dependencies": {
-    "async": "^1.5.0",
+    "async": "^3.2.2",
     "broadway": "^4.1.0",
     "diagnostics": "^1.0.1",
     "express": "^4.13.3",
