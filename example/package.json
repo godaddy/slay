@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "slay": "^1.0.0",
-    "winston": "~2.3.0"
+    "slay": "^2.0.0",
+    "winston": "~3.3.0"
   }
 }
