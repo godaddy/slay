@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "slay": "^4.0.0",
-    "winston": "~2.3.0"
+    "winston": "~2.4.6"
   }
 }
