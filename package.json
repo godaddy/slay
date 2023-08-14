@@ -27,7 +27,7 @@
   "scripts": {
     "lint": "eslint --fix ./lib ./test",
     "posttest": "npm run lint",
-    "test": "mocha ./test/*.test.js",
+    "test": "mocha ./test/*.test.js"
   },
   "repository": {
     "type": "git",
