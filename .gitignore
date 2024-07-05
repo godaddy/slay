@@ -37,7 +37,3 @@ build
 # Arbitrary tarballs
 *.tar.gz
 *.tgz
-
-# Locks
-yarn.lock
-package-lock.json
