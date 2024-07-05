@@ -4,7 +4,7 @@ let rid = 0;
 
 module.exports = function middlwares(app, options, callback) {
   app.perform('middlewares', function performMiddlewares(next) {
-    app.use(function httpLogger (req, res, next) {
+    app.use(function httpLogger(req, res, next) {
       app.log.info('%s - request - %s', req.method, req.url, {
         rid: ++rid
       });

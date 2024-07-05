@@ -10,7 +10,7 @@ module.exports = function db(app, options, callback) {
 // Pretend database stub to show that preboots are especially useful for
 // async initialization
 //
-function DB (options) {}
+function DB(options) {}
 
 DB.prototype.connect = function connect(callback) {
   setImmediate(callback);
