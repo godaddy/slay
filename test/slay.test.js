@@ -84,6 +84,11 @@ describe('Slay test suite (unit tests)', function () {
         });
       });
 
+      /* Shutdown the app */
+      after(async function () {
+        await app.close();
+      });
+
       it('should set app.env, trimming any whitespace', function (done) {
         assert.equal(app.env, 'unique-key');
         process.env.NODE_ENV = previous;
@@ -97,11 +102,6 @@ describe('Slay test suite (unit tests)', function () {
         assert(response);
         assert.equal(response.status, 404);
         assert.equal(body, 'not found');
-      });
-
-      /* Shutdown the app */
-      after(function (done) {
-        app.close(done);
       });
     });
 
