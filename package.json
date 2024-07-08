@@ -2,30 +2,37 @@
   "name": "slay",
   "version": "4.1.0",
   "description": "Rock-solid structured application layout for building APIs and web apps in Node.js",
+  "homepage": "https://github.com/godaddy/slay#readme",
+  "bugs": {
+    "url": "https://github.com/godaddy/slay/issues"
+  },
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
-    "async": "^1.5.0",
+    "async": "^3.2.5",
     "broadway": "^4.1.0",
-    "diagnostics": "^1.0.1",
-    "express": "^4.13.3",
+    "diagnostics": "^2.0.2",
+    "express": "^4.19.2",
     "lodash.merge": "^4.6.2",
-    "nconf": "^0.12.0",
+    "nconf": "^0.12.1",
     "understudy": "^4.1.0",
-    "winston": "^3.1.0"
+    "winston": "^3.13.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
     "eslint": "^8.11.0",
-    "eslint-config-godaddy": "^6.0.0",
-    "mocha": "^9.2.2",
-    "request": "^2.79.0",
-    "sinon": "^1.17.2"
+    "eslint-config-godaddy": "^7.1.1",
+    "mocha": "^10.6.0",
+    "sinon": "^18.0.0"
   },
   "engines": {
     "node": ">=10.0.0"
   },
   "scripts": {
-    "lint": "eslint --fix ./lib ./test",
+    "lint": "eslint ./lib ./test",
+    "fix": "npm run lint -- --fix",
     "posttest": "npm run lint",
     "test": "mocha ./test/*.test.js"
   },

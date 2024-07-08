@@ -4,9 +4,19 @@
 const assert = require('chai').assert;
 const util = require('util');
 const path = require('path');
-const request = require('request');
 const slay = require('../');
 const winston = require('winston');
+
+async function streamToString(stream) {
+  // lets have a ReadableStream as a stream variable
+  const chunks = [];
+
+  for await (const chunk of stream) {
+    chunks.push(Buffer.from(chunk));
+  }
+
+  return Buffer.concat(chunks).toString('utf-8');
+}
 
 describe('Slay test suite (unit tests)', function () {
 
@@ -74,25 +84,24 @@ describe('Slay test suite (unit tests)', function () {
         });
       });
 
+      /* Shutdown the app */
+      after(async function () {
+        await app.close();
+      });
+
       it('should set app.env, trimming any whitespace', function (done) {
         assert.equal(app.env, 'unique-key');
         process.env.NODE_ENV = previous;
         done();
       });
 
-      it('Testing the root url of the app', function (done) {
-        request(baseUri + '/', function (error, response, body) {
-          assert.ifError(error);
-          assert(response);
-          assert.equal(response.statusCode, 404);
-          assert.equal(body, 'not found');
-          done();
-        });
-      });
-
-      /* Shutdown the app */
-      after(function (done) {
-        app.close(done);
+      it('Testing the root url of the app', async function () {
+        const response = await fetch(baseUri + '/');
+        const body = await streamToString(response.body);
+        assert.ifError(response.error);
+        assert(response);
+        assert.equal(response.status, 404);
+        assert.equal(body, 'not found');
       });
     });
 
