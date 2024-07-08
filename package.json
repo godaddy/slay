@@ -21,7 +21,7 @@
     "winston": "^3.13.0"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
+    "chai": "^5.1.1",
     "eslint": "^8.11.0",
     "eslint-config-godaddy": "^7.1.1",
     "mocha": "^10.6.0",
