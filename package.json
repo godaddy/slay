@@ -13,7 +13,7 @@
   "dependencies": {
     "async": "^3.2.5",
     "broadway": "^4.1.0",
-    "diagnostics": "^2.0.2",
+    "diagnostics": "^3.0.0",
     "express": "^4.19.2",
     "lodash.merge": "^4.6.2",
     "nconf": "^0.12.1",
