@@ -1,6 +1,6 @@
 {
   "name": "slay",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Rock-solid structured application layout for building APIs and web apps in Node.js",
   "homepage": "https://github.com/godaddy/slay#readme",
   "bugs": {
